@@ -374,7 +374,6 @@ static int create_legacy_ap(const struct audio_policy_device *device,
     lap->policy.unregister_effect = ap_unregister_effect;
     lap->policy.set_effect_enabled = ap_set_effect_enabled;
     lap->policy.is_stream_active = ap_is_stream_active;
-    lap->policy.is_stream_active_remotely = ap_is_stream_active_remotely;
     lap->policy.is_source_active = ap_is_source_active;
     lap->policy.dump = ap_dump;
     lap->policy.is_offload_supported = ap_is_offload_supported;
