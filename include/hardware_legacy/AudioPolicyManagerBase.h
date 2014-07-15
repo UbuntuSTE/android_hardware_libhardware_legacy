@@ -104,7 +104,8 @@ public:
                                             uint32_t samplingRate,
                                             uint32_t format,
                                             uint32_t channels,
-                                            AudioSystem::audio_in_acoustics acoustics);
+                                            AudioSystem::audio_in_acoustics acoustics,
+                                            audio_input_clients *inputClientId = NULL);
 
         // indicates to the audio policy manager that the input starts being used.
         virtual status_t startInput(audio_io_handle_t input);

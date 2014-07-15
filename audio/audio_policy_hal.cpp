@@ -177,11 +177,12 @@ static audio_io_handle_t ap_get_input(struct audio_policy *pol, audio_source_t i
                                       uint32_t sampling_rate,
                                       audio_format_t format,
                                       audio_channel_mask_t channelMask,
-                                      audio_in_acoustics_t acoustics)
+                                      audio_in_acoustics_t acoustics,
+                                      audio_input_clients *inputClientId)
 {
     struct legacy_audio_policy *lap = to_lap(pol);
     return lap->apm->getInput((int) inputSource, sampling_rate, (int) format, channelMask,
-                              (AudioSystem::audio_in_acoustics)acoustics);
+                              (AudioSystem::audio_in_acoustics)acoustics, inputClientId);
 }
 
 static int ap_start_input(struct audio_policy *pol, audio_io_handle_t input)

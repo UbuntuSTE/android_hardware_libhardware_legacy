@@ -902,7 +902,8 @@ audio_io_handle_t AudioPolicyManagerBase::getInput(int inputSource,
                                     uint32_t samplingRate,
                                     uint32_t format,
                                     uint32_t channelMask,
-                                    AudioSystem::audio_in_acoustics acoustics)
+                                    AudioSystem::audio_in_acoustics acoustics,
+                                    audio_input_clients *inputClientId)
 {
     audio_io_handle_t input = 0;
     audio_devices_t device = getDeviceForInputSource(inputSource);
@@ -958,7 +959,8 @@ audio_io_handle_t AudioPolicyManagerBase::getInput(int inputSource,
                                     &inputDesc->mDevice,
                                     &inputDesc->mSamplingRate,
                                     &inputDesc->mFormat,
-                                    &inputDesc->mChannelMask);
+                                    &inputDesc->mChannelMask,
+                                    inputClientId);
 
     // only accept input with the exact requested set of parameters
     if (input == 0 ||
